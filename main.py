@@ -1,6 +1,6 @@
 from Sistema import Sistema
 from cadastro import Usuario
-from database import conecta, encerra_conexao
+from database import conecta, encerrar_conexao
 
 def __main__(): 
     # Conexão com o banco de dados
@@ -8,7 +8,6 @@ def __main__():
     cursor = connection.cursor()
     
     def inserir_usuario(username, password):
-        Usuario(username, password)
         cmd_insert = "INSERT INTO usuarios (username, password) VALUES (%s, %s)"
         values = username, password
         cursor.execute(cmd_insert, values)
@@ -19,7 +18,7 @@ def __main__():
     print("Para estar cadastrando, coloque seu username e senha")
     username = input("Username: ")
     password = input("Password: ")
-    # inserir_usuario(username, password)
+    inserir_usuario(username, password)
     
     
     # sistema = Sistema()
