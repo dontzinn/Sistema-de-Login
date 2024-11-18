@@ -17,12 +17,7 @@ def conecta():
     except Error as e:
         print(f"Ocorreu um erro ao conectar no banco de dados: {e}")
 
-conecta()
-# cursor.execute('SELECT * FROM usuarios')
-
-# usuarios = cursor.fetchall()
-
-# print(usuarios)
-
-# cursor.close()
-# connection.close()
+def encerrar_conexao(connection):
+    if connection:
+        connection.close()
+    print("Conexão encerrada")
