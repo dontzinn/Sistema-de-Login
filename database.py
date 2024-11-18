@@ -9,7 +9,7 @@ def conecta():
             host='localhost', 
             database='usuarios', 
             user='postgres', 
-            password=''
+            password='root'
         )
         print("Conectado no postgre com sucesso!!")
         return connection
