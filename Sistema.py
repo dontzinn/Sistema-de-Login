@@ -3,7 +3,7 @@ class Sistema:
     def __init__(self):
         self.usuarios = []
 
-    def cadastrar_usuario(self, username, password, id):
+    def cadastrar_usuario(self, username, password):
         for usuario in self.usuarios:
             if usuario.username == username:
                 print('Já existe um cadastro com este username')
