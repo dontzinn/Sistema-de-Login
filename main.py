@@ -4,6 +4,7 @@ from database import conecta, encerrar_conexao
 
 def __main__(): 
     # Conexão com o banco de dados
+    # Create
     connection = conecta()
     cursor = connection.cursor()
     
@@ -19,8 +20,18 @@ def __main__():
     username = input("Username: ")
     password = input("Password: ")
     inserir_usuario(username, password)
+
+    # Read
+    def seleciona():
+        cmd_select = "SELECT username, id FROM usuarios"
+        cursor.execute(cmd_select)
+        users = cursor.fetchall()
+        for usuario in users:
+            print(usuario)
+        return usuario
     
-    
+    seleciona()
+
     # sistema = Sistema()
     # sistema.cadastrar_usuario('Pedro', '123pedro132',1)
     # sistema.login('Pedro', '123pedro132')
